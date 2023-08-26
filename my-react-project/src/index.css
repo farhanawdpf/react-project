@@ -1,0 +1,24 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+.headBody { 
+   background-color: blue;
+   color: beige;
+   text-align: center;
+}
+.footer { 
+    background-color: blueviolet;
+    color: blanchedalmond;
+    text-align: center;
+}
+.headingStyle { 
+    background-color: blueviolet;
+    color: blanchedalmond;
+   box-shadow: 2px 4px grey;
+   border-radius: 5px;
+   margin: 10px;
+   padding: 10px;
+   width: 300px;
+   display: inline-block;
+}
