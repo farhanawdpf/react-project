@@ -2,19 +2,37 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css'
-import Card from './components/Card'
-import Data from './data.json'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Blog from './pages/Blog'
+import Contact from './pages/Contact'
+import Navbar from './components/Navbar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import Channel from './pages/Channel'
+import Demo from './pages/Demo'
+import Error from './pages/Error'
 
 function App() {
-  // let items = [];
-  // items = Data.map((item) =><Card tityleText={item.title} descTitle={item.desc} />)
-  // for (let x=0; x<Data.length; x++) { 
-  //   items.push(<Card tityleText={Data[x].title} descTitle={Data[x].desc} />)
-  // }
 
-  return <div> 
-      {Data.map((item, index) =><Card tityleText={item.title} key={index}descTitle={item.desc} />)}
-  </div>
+  return ( 
+     <BrowserRouter>
+    <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} >
+            <Route path="/chennal" element={<Channel />} />
+        </Route> 
+        <Route path="/blog" element={<Blog />} > 
+           <Route path="demo" element={<Demo />} />
+        </Route>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/channel" element={<Channel />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+   </BrowserRouter>
+  )
 }
 
 export default App
