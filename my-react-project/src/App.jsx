@@ -13,6 +13,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Channel from './pages/Channel'
 import Demo from './pages/Demo'
 import Error from './pages/Error'
+import Services from './pages/service/Services'
+import ServiceList from './pages/service/ServiceList'
 
 function App() {
 
@@ -29,6 +31,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/channel" element={<Channel />} />
+        <Route path='/add-service' element={ <Services />}/>
+        <Route path='/service-list' element={<ServiceList />}/>
         <Route path="*" element={<Error />} />
       </Routes>
    </BrowserRouter>
