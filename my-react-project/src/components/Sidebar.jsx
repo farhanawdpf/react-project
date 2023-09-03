@@ -2,7 +2,15 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div> 
+      <div className='container-fluid'> 
+        <div className='row'> 
+          <div className='col-4'> 
+
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
