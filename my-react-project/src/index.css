@@ -35,13 +35,3 @@ nav {
   margin: 1rem;
   text-decoration: none;
 }
-
-.formClass { 
-    background-color: rgb(239, 236, 242);
-    color: rgb(8, 5, 1);
-   box-shadow: 2px 4px grey;
-   border-radius: 5px;
-   margin: 10px;
-   padding: 10px;
-   width: 200px;
-}
