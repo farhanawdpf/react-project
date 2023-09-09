@@ -14,11 +14,15 @@ import Channel from './pages/Channel'
 import Demo from './pages/Demo'
 import Error from './pages/Error'
 import UList from './components/unickList/UList'
+import Officer from './components/Officer'
+import Stat from './components/Stat'
 
 function App() {
 
   return ( 
      <BrowserRouter>
+     <Officer />
+     <Stat />
      <UList />
     <Navbar />
       <Routes>
