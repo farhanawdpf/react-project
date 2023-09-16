@@ -49,7 +49,7 @@ export default function Login() {
  
     function loginSubmit(){
         if(user !== "" && pass != ""){
-            var url = "http://localhost/reactjs/login.php";
+            var url = "http://localhost/React-PHP-CRUD-new/api/login.php";
             var headers = {
                 "Accept": "application/json",
                 "Content-type": "application/json"

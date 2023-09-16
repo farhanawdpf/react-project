@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function Userlist()
 { 
@@ -13,7 +14,7 @@ function Userlist()
     },[]);
 
  const getUserData= async()=>{
-    const reqData= await fetch("http://localhost/React-PHP-CRUD/api/user.php");
+    const reqData= await fetch("http://localhost/React-PHP-CRUD-new/api/user.php");
     const resData= await reqData.json();           
     setUserData(resData);
      } 
@@ -26,7 +27,12 @@ function Userlist()
 
        return(
         <React.Fragment>
+            <div className='d-flex'>
+            <div className='col-md-3'>
+                <Sidebar />
+            </div>
             <div className="container">
+            <Header />
                 <div className="row">
                     <div className="col-md-10 mt-4">
                         <h5 className="mb-4">User List</h5> 
@@ -60,6 +66,7 @@ function Userlist()
                                 </table>  
                     </div>
                 </div>
+            </div>
             </div>
         </React.Fragment>
     );

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function Addproduct()
 {  
@@ -15,7 +17,7 @@ function Addproduct()
         formData.append('ptitle', ptitle);
         formData.append('pprice',pprice);
         formData.append('pfile', pfile);
-        const responce= await axios.post("http://localhost/React-PHP-CRUD/api/product.php", formData, {
+        const responce= await axios.post("http://localhost/React-PHP-CRUD-new/api/product.php", formData, {
             headers:{'Content-Type':"multipart/form-data"},
         } );
 
@@ -36,7 +38,12 @@ function Addproduct()
    }
     return(
     <React.Fragment>
+        <div className='d-flex'>
+            <div className='col-md-3'>
+                <Sidebar />
+            </div>
         <div className="container">
+        <Header />
             <div className="row">
               <div className="col-md-8 mt-4">
                 <h5 className="mb-4">Add Product </h5> 
@@ -75,6 +82,7 @@ function Addproduct()
 
              </div>
             </div>
+        </div>
         </div>
     </React.Fragment>
     );

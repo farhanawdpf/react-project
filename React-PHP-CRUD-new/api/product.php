@@ -23,7 +23,7 @@ switch($method)
         echo "Get Api Single Row"; die;
       } else {
        //echo "return all Data"; die;
-       $destination= $_SERVER['DOCUMENT_ROOT']."/React-PHP-CRUD/reactcrudphp"."/";
+       $destination= $_SERVER['DOCUMENT_ROOT']."/React-PHP-CRUD-new/reactcrudphp"."/";
        $allproduct= mysqli_query($db_conn, "SELECT * FROM product");
        if(mysqli_num_rows($allproduct) > 0)
        {
@@ -56,7 +56,7 @@ switch($method)
         $pprice= $_POST['pprice'];
         $pfile= time().$_FILES['pfile']['name'];
         $pfile_temp= $_FILES['pfile']['tmp_name'];
-        $destination= $_SERVER['DOCUMENT_ROOT'].'/React-PHP-CRUD/reactcrudphp'."/".$pfile;
+        $destination= $_SERVER['DOCUMENT_ROOT'].'/React-PHP-CRUD-new/reactcrudphp'."/".$pfile;
 
         $result= mysqli_query($db_conn,"INSERT INTO product (ptitle, pprice,pfile, pstatus)
         VALUES('$ptitle','$pprice','$pfile','1')");

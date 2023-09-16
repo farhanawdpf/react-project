@@ -13,15 +13,28 @@ const Sidebar = () => {
         <ul className="menu">
             <li><Link to="/" className="active"><i className="fa fa-home"></i> Dashboard</Link></li>
             <li><Link to="/adduser"><i className="fa fa-user-plus"></i>Department</Link> </li>
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                User part
-              </button>
-              <ul className="dropdown-menu">
-                <li><a className="dropdown-item"  href="/adduser">Add user</a></li>
+            <li className="nav-item">
+             <a className="nav-link" href="#">Link</a>
+            </li>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              User management
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="/adduser">Add User</a></li>
                 <li><a className="dropdown-item" href="/userlist">Manage User</a></li>
               </ul>
-            </div>
+            </li>
+
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Product management
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="/addproduct">Add Product</a></li>
+                <li><a className="dropdown-item" href="/productlist">Manage Product</a></li>
+              </ul>
+            </li>
             
             
             <li><Link to="/productlist"><i className="fa fa-calendar"></i> Attendance</Link></li>

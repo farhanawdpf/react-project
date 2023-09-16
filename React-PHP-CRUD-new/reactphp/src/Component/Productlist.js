@@ -1,5 +1,7 @@
 import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function Productlist()
 { 
@@ -7,7 +9,7 @@ function Productlist()
 
   useEffect( ()=>{
     const getProduct= ()=>{
-        fetch("http://localhost/React-PHP-CRUD/api/product.php")
+        fetch("http://localhost/React-PHP-CRUD-new/api/product.php")
         .then(res=>{ return res.json()})
         .then(data=>{ setProduct(data)})
         .catch(error=>{ console.log(error)});
@@ -18,7 +20,12 @@ function Productlist()
   
     return(
         <React.Fragment>
+            <div className='d-flex'>
+            <div className='col-md-3'>
+                <Sidebar />
+            </div>
             <div className="container container_overflow">
+            <Header />
                 <div className="row">
                     <div className="col-md-10 mt-4">
                         <h5 className="mb-4">Product List</h5> 
@@ -56,6 +63,7 @@ function Productlist()
                                 </table>  
                     </div>
                 </div>
+            </div>
             </div>
         </React.Fragment>
     );

@@ -17,21 +17,15 @@ import Sidebar from './Component/Sidebar';
 function App() {
   return (
     <div className="App">
-    <div className='d-flex'>
-      <div className='col-md-3'>
-        <Sidebar />
-      </div>
-      {/* <Header/> */}
       <Routes>
-      <Route path="/Login" element={<Login />} />
-      <Route path="/" element= { <Dashboard /> } />
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Protected Component={Dashboard} />} />
       <Route path="/userlist" element= { <Userlist/> } />
       <Route path="/adduser" element= { <Adduser/> } />
       <Route path="/edituser/:id" element= { <Edituser/> } />
-      <Route path="/addproduct/" element= { <Addproduct/> } />
-      <Route path="/productlist/" element= { <Productlist/> } />
+      <Route path="/addproduct" element= { <Addproduct/> } />
+      <Route path="/productlist" element= { <Productlist/> } />
       </Routes>
-      </div>
       <Footer/>    
  </div>
   );

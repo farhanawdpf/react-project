@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, {useState }from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function Adduser()
 {   
@@ -15,7 +17,7 @@ function Adduser()
          e.preventDefault();
          //console.log(formvalue);
          const formData= {username:formvalue.username, email:formvalue.email, status:formvalue.status}; 
-         const res= await axios.post("http://localhost/React-PHP-CRUD/api/user.php",formData);
+         const res= await axios.post("http://localhost/React-PHP-CRUD-new/api/user.php",formData);
          //let jsonres= res.data.json();        
            if(res.data.success)
            {
@@ -28,7 +30,13 @@ function Adduser()
         }   
     return(
         <React.Fragment>
+           
+           <div className='d-flex'>
+            <div className='col-md-3'>
+                <Sidebar />
+            </div>
             <div className="container">
+            <Header />
                 <div className="row">
                     <div className="col-md-6 mt-4">
                         <h5 className="mb-4">Adduser </h5> 
@@ -69,6 +77,7 @@ function Adduser()
       
                     </div>
                 </div>
+            </div>
             </div>
         </React.Fragment>
     );

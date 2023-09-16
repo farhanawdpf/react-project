@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, {useState, useEffect }from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 function Edituser()
 {   
@@ -15,7 +17,7 @@ function Edituser()
 
     useEffect( ()=>{
         const userRowdata= async()=>{
-         const getUserdata= await fetch("http://localhost/React-PHP-CRUD/api/user.php/"+id);
+         const getUserdata= await fetch("http://localhost/React-PHP-CRUD-new/api/user.php/"+id);
          const resuserdata= await getUserdata.json();        
          setFormvalue(resuserdata);
         }
@@ -26,7 +28,7 @@ function Edituser()
          e.preventDefault();
          //console.log(formvalue);
          const formData= {id:id,username:formvalue.username, email:formvalue.email, status:formvalue.status}; 
-         const res= await axios.put("http://localhost/React-PHP-CRUD/api/user.php",formData);
+         const res= await axios.put("http://localhost/React-PHP-CRUD-new/api/user.php",formData);
          //let jsonres= res.data.json();        
            if(res.data.success)
            {
@@ -39,7 +41,12 @@ function Edituser()
         }   
     return(
         <React.Fragment>
+            <div className='d-flex'>
+            <div className='col-md-3'>
+                <Sidebar />
+            </div>
             <div className="container">
+            <Header />
                 <div className="row">
                     <div className="col-md-6 mt-4">
                         <h5 className="mb-4">Adduser </h5> 
@@ -80,6 +87,7 @@ function Edituser()
       
                     </div>
                 </div>
+            </div>
             </div>
         </React.Fragment>
     );
