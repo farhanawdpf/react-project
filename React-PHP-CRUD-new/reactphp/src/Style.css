@@ -1,0 +1,209 @@
+*{ 
+  margin:0px;
+  padding:0px;
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/*--------------------header--------------------------*/
+
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the admin header */
+.admin-header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Style the logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Style the navigation links */
+.nav-links ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Style the user profile section */
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-profile span {
+  font-weight: bold;
+}
+
+/* Style the main content area */
+.main-content {
+  padding: 20px;
+}
+
+/*--------------------------siderbar---------*/
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the sidebar */
+.sidebar {
+  background-color: #333;
+  color: #fff;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sidebar .logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+}
+
+.sidebar .menu {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar .menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-left: 4px solid transparent;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #ff6600;
+  border-left: 4px solid #fff;
+}
+
+.sidebar a i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Style the main content area */
+main {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/*----------------------footer--------*/
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the admin footer */
+.admin-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the footer links */
+.footer-links ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Style the copyright notice */
+.copyright {
+  font-size: 0.9rem;
+}
+
+/*---------------------employee----------------------*/
+
