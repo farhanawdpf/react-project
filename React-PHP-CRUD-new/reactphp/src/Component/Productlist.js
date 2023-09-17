@@ -2,21 +2,28 @@ import React, {useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
+import axios from "axios";
 
 function Productlist()
 { 
   const[product, setProduct]= useState([]);
-
-  useEffect( ()=>{
-    const getProduct= ()=>{
-        fetch("http://localhost/React-PHP-CRUD-new/api/product.php")
-        .then(res=>{ return res.json()})
-        .then(data=>{ setProduct(data)})
-        .catch(error=>{ console.log(error)});
-    }
-    getProduct();
-  },[]);
+  const [message, setMessage]= useState('');
  
+  useEffect( ()=>{   
+  getProductData();
+  },[]);
+
+const getProductData= async()=>{
+  const reqData= await fetch("http://localhost/React-PHP-CRUD-new/api/product.php");
+  const resData= await reqData.json();           
+  setProduct(resData);
+   } 
+
+const handleDelete= async(id)=>{
+ const res= await axios.delete("http://localhost/React-PHP-CRUD-new/api/product.php/"+id);
+ setMessage(res.data.success);
+ getProductData();   
+}
   
     return(
         <React.Fragment>
@@ -29,7 +36,7 @@ function Productlist()
                 <div className="row">
                     <div className="col-md-10 mt-4">
                         <h5 className="mb-4">Product List</h5> 
-                        <p className="text-danger"> </p>                 
+                        <p className="text-danger">{ message} </p>                                 
                                 <table className="table table-bordered">
                                 <thead>
                                 <tr>
@@ -48,11 +55,11 @@ function Productlist()
                                             <td>{index+1 } </td>
                                             <td>{pdata.ptitle } </td>
                                             <td>{pdata.pprice } </td>
-                                            <td><img src={`http://localhost//React-PHP-CRUD/reactcrudphp/${pdata.pimage}`} height={50} width={90} /></td>
+                                            <td><img src={`http://localhost//React-PHP-CRUD-new/reactcrudphp/${pdata.pimage}`} height={50} width={90} /></td>
                                             <td>{ pdata.status==1?"Active":"Inactive"} </td>
                                             <td>
-                                                <Link to="/editproduct" className="btn btn-success mx-2">Edit</Link>
-                                             <Link to="/deleteproduct" className="btn btn-danger">Delete</Link>
+                                            <Link to={"/editproduct/"+pdata.id} className="btn btn-success mx-2">Edit</Link>
+                                             <button className="btn btn-danger" onClick={ ()=>handleDelete(pdata.id)}>Delete</button>
                                             </td>
                                             </tr>
                                         ))

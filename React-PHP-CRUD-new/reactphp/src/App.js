@@ -13,6 +13,10 @@ import Login from './Component/Login';
 import Protected from './Component/Protected';
 import Dashboard from './Component/Dashboard';
 import Sidebar from './Component/Sidebar';
+import Addcat from './Component/Addcat';
+import Catlist from './Component/Catlist';
+import Editcat from './Component/Editcat';
+import Editproduct from './Component/Editproduct';
 
 function App() {
   return (
@@ -23,8 +27,12 @@ function App() {
       <Route path="/userlist" element= { <Userlist/> } />
       <Route path="/adduser" element= { <Adduser/> } />
       <Route path="/edituser/:id" element= { <Edituser/> } />
+      <Route path="/editProduct/:id" element= { <Editproduct/> } />
       <Route path="/addproduct" element= { <Addproduct/> } />
       <Route path="/productlist" element= { <Productlist/> } />
+      <Route path="/addcat" element= { <Addcat/> } />
+      <Route path="/catlist" element= { <Catlist/> } />
+      <Route path="/editcat/:id" element= { <Editcat/> } />
       </Routes>
       <Footer/>    
  </div>
