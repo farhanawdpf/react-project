@@ -78,9 +78,40 @@ switch($method)
         
     break;
 
+    case "PUT":
+      $userUpdate= json_decode(file_get_contents("php://input"));
+
+       $p_id= $userUpdate->p_id;
+       $ptitle= $userUpdate->ptitle;
+       $pprice= $userUpdate->pprice;
+
+       $updateData= mysqli_query($db_conn, "UPDATE product SET ptitle='$ptitle', pprice='$pprice' WHERE p_id='$p_id' ");
+       if($updateData)
+       {
+         echo json_encode(["success"=>"Product Record Update Successfully"]);
+         return;
+       } else {
+           echo json_encode(["success"=>"Please Check the User Data!"]);
+           return; 
+       }
+     // print_r($userUpdate); die;
+      break;
+
+
     case "DELETE":
-           
-    break;
+      $path= explode('/', $_SERVER["REQUEST_URI"]);
+      //echo "message userid------".$path[5]; die;
+      $result= mysqli_query($db_conn, "DELETE FROM product WHERE p_id= '$path[4]' ");
+      if($result)
+      {
+        echo json_encode(["success"=>"User Record Deleted Successfully"]);
+        return;
+      } else {
+        echo json_encode(["Please Check the User Data!"]);
+        return;
+      }
+
+    break;   
 
           
 
