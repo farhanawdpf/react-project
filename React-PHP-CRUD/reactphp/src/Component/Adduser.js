@@ -15,7 +15,7 @@ function Adduser()
          e.preventDefault();
          //console.log(formvalue);
          const formData= {username:formvalue.username, email:formvalue.email, status:formvalue.status}; 
-         const res= await axios.post("http://localhost/React-PHP-CRUD/api/user.php",formData);
+         const res= await axios.post("http://localhost/react-project/React-PHP-CRUD/api/user.php",formData);
          //let jsonres= res.data.json();        
            if(res.data.success)
            {

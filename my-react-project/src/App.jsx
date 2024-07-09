@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
@@ -13,17 +10,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Channel from './pages/Channel'
 import Demo from './pages/Demo'
 import Error from './pages/Error'
-import UList from './components/unickList/UList'
-import Officer from './components/Officer'
-import Stat from './components/Stat'
 
 function App() {
 
   return ( 
      <BrowserRouter>
-     <Officer />
-     <Stat />
-     <UList />
     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} >
