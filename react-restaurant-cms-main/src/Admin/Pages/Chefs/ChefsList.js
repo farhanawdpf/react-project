@@ -1,0 +1,72 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
+export default function ChefsList() {
+
+    const [items, setItems] = useState([]);
+    const nav = useNavigate();
+
+    const itemDelete = (id) => {
+        axios.get("http://localhost/reactjs/dingo/backend/chefs/deletechefs.php?id=" + id)
+            .then((res) => (console.log(res)))
+
+        axios.get("http://localhost/reactjs/dingo/backend/chefs/getchefs.php")
+            .then((res) => setItems(res.data))
+    }
+
+    useEffect(() => {
+        axios.get("http://localhost/reactjs/dingo/backend/chefs/getchefs.php")
+            .then((res) => setItems(res.data))
+    }, [])
+
+    return (
+        <div className="container-fluid pt-4 px-4">
+            <div className="col-sm-12 col-xl-12">
+                <div className="bg-light rounded h-100 p-4">
+                    <div className="d-flex justify-content-between align-items-center mb-4">
+                        <h2 className="mb-0">Chef List</h2>
+                        <NavLink to="/admin/chefadd">
+                            <button className="btn btn-primary btn-lg">Add Chefs</button>
+                        </NavLink>
+                    </div>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {items.map((d, i) => {
+                                return (
+
+                                    <tr key={i}>
+                                        <th scope="row">{++i}</th>
+                                        <td>{d.name}</td>
+                                        <td>{d.designation}</td>
+                                        <td>
+                                            <img className='w-50' src={`http://localhost/reactjs/dingo/backend/images/${d.photo}`} />
+                                        </td>
+                                        <td>
+                                            <NavLink to={`/admin/chefedit/${d.id}`}>
+                                                <button className='btn btn-info mb-2 mt-2'>Update</button>
+                                            </NavLink>
+                                            <button className='btn btn-danger' onClick={() => { itemDelete(d.id) }}>Delete</button>
+                                        </td>
+                                    </tr>
+
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    )
+}
