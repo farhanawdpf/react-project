@@ -7,9 +7,8 @@ import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import Channel from './pages/Channel'
-import Demo from './pages/Demo'
-import Error from './pages/Error'
+import Gellry from './pages/Gellry'
+
 
 function App() {
 
@@ -17,16 +16,11 @@ function App() {
      <BrowserRouter>
     <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} >
-            <Route path="/chennal" element={<Channel />} />
-        </Route> 
-        <Route path="/blog" element={<Blog />} > 
-           <Route path="demo" element={<Demo />} />
-        </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />   
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/channel" element={<Channel />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/gllry" element={<Gellry />} />
       </Routes>
    </BrowserRouter>
   )
