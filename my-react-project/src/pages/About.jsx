@@ -21,6 +21,9 @@ const About = () => {
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Check me out" />
     </Form.Group>
+    
+    <img src={'/vite.svg'} alt="" />
+
     <Button variant="primary" type="submit">
       Submit
     </Button>

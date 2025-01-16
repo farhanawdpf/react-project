@@ -8,6 +8,9 @@ import Navbar from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Gellry from './pages/Gellry'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -15,6 +18,7 @@ function App() {
   return ( 
      <BrowserRouter>
     <Navbar />
+    <Sidebar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />   
@@ -22,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gllry" element={<Gellry />} />
       </Routes>
+      <Footer/>
    </BrowserRouter>
   )
 }
