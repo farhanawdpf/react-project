@@ -12,6 +12,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import Card from './pages/Card'
+import Master from './pages/Master'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/gllry" element={<Gellry />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/master" element={<Master />} />
       </Routes>
       <Footer/>
    </BrowserRouter>

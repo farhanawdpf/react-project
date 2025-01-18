@@ -28,8 +28,8 @@ const Sidebar = () => {
               />
             </div>
             <div className="info">
-              <NavLink to="/about" className="d-block">
-                Alexander Pierce
+              <NavLink to="#" className="d-block">
+                M
               </NavLink>
             </div>
           </div>
@@ -112,10 +112,10 @@ const Sidebar = () => {
                 </NavLink>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="../tables/simple.html" className="nav-link">
+                    <NavLink to="/master" className="nav-link">
                       <i className="far fa-circle nav-icon" />
-                      <p>Simple Tables</p>
-                    </a>
+                      <p>Master Tables</p>
+                    </NavLink>
                   </li>
                   <li className="nav-item">
                     <a href="../tables/data.html" className="nav-link">
