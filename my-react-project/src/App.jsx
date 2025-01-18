@@ -11,6 +11,7 @@ import Gellry from './pages/Gellry'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
+import Card from './pages/Card'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/gllry" element={<Gellry />} />
+        <Route path="/card" element={<Card />} />
       </Routes>
       <Footer/>
    </BrowserRouter>

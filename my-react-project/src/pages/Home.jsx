@@ -50,7 +50,15 @@ const Home = () => {
               </div>
             </div>
             <div className="card-body">
+
+
+
+
               Start creating your amazing application!
+
+
+
+
             </div>
             {/* /.card-body */}
             <div className="card-footer">Footer</div>
